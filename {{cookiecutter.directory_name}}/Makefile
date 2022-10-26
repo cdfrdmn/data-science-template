@@ -2,32 +2,17 @@
 .EXPORT_ALL_VARIABLES:
 
 install: 
-	@echo "Installing..."
+	@echo "Installing project dependencies with Poetry..."
 	poetry install
-	poetry run pre-commit install
 
 activate:
-	@echo "Activating virtual environment"
+	@echo "Activating Poetry Virtual Environment"
 	poetry shell
 
 initialize_git:
 	git init 
 
-pull_data:
-	poetry run dvc pull
-
 setup: initialize_git install
-
-test:
-	pytest
-
-docs_view:
-	@echo View API documentation... 
-	pdoc src --http localhost:8080
-
-docs_save:
-	@echo Save documentation to docs... 
-	pdoc src -o docs
 
 ## Delete all compiled Python files
 clean:
