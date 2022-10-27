@@ -2,10 +2,10 @@
 name = "{{cookiecutter.directory_name}}"
 version = "0.1.0"
 description = ""
-authors = ["{{cookiecutter.author_name}}"]
+authors = "{{cookiecutter.author_name}}"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "{{cookiecutter.compatible_python_versions}}"
 ipykernel = "^6.16.2"
 jupyter = "^1.0.0"
 pandas = "^1.5.1"
