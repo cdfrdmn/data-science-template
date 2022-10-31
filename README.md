@@ -1,4 +1,4 @@
-# Data Science Cookie Cutter
+# Data Science Template
 
 **Note**: _This repo was forked from https://github.com/khuyentran1401/data-science-template_
 
