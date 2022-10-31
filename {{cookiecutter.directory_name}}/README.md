@@ -6,41 +6,85 @@
 
 * [Python](https://www.python.org/getit/) development environment
 * [Poetry](https://python-poetry.org/docs/): Dependency management
-* Add more...
+* Add more if needed...
 
-## Installation
+## Installation Method 1 - Using the Makefile
+
+This method is quicker as it uses `make` commands. 
 
 1. Clone this repository:
 ```bash
-$ git clone https://github.com/this-repo
-
+$ git clone https://github.com/<your-repo-name-here>
 ```
-2. Activate the virtual environment and open a sub-shell within it:
+2. In the repository, start a new shell and activate the virtual envoironment:
 ```bash
-$ cd {{cookiecutter.directory_name}}
+$ make activate
+```
 
+3. Initialise a git repo and install the project dependencies:
+```bash
+$ make setup
+```
+_(**Note**: If you already initialised a git repository - don't worry, 
+reinitializing won't do anything.)_
+
+## Installation Method 2 - Using Poetry
+
+If you prefer to know what the `make` commands are doing, follow this method. 
+
+1. Clone this repository:
+```bash
+$ git clone https://github.com/<your-repo-name-here>
+```
+2. In the repository, start a new shell and activate the virtual envoironment:
+```bash
 $ poetry shell
 ```
 
-3. Install the dependencies of this project:
+3. Initialise a git repository:
+```bash
+$ git init
+```
+
+4. Install the project dependencies:
 ```bash
 $ poetry install
 ```
 
-You are now ready to use this project.
+You are now ready to use this project!
 
-## Usage
+## Using Poetry
+Read the full Poetry docs [here](https://python-poetry.org/docs/).
 
-You can explore this project in a Jupyter Notebook. There are two ways to do
-this:
+### Installing more packages
 
-* If you are already inside a sub-shell of the virtual environment, run the
+You can add more PyPI packages to this project with:
+```bash
+$ poetry add <package-name>
+```
+
+### Running scripts
+
+To run your script simply use:
+```bash
+$ poetry run python your_script.py
+```
+
+Likewise if you have command line tools such as `pytest` or `black` you can run them using `poetry run pytest`.
+
+## Jupyter Notebook
+
+You can explore this project in a Jupyter Notebook.
+
+From a sub-shell of the virtual environment, run the
 following command:
 ```bash
 $ jupyter notebook
 ```
-* Alternatively, if you are not in a sub-shell of the virtual environment, you can use the command:
+Alternatively, if you are not in a sub-shell of the virtual environment, you can
+use the command:
 ```bash
 $ poetry run jupyter notebook
 ```
-This will start a Jupyter server and display this project's Jupyter Notebook in your web browser.
+This will start a Jupyter server and open the project's Jupyter Notebook in
+your web browser.

@@ -1,45 +1,58 @@
-# Data Science Template
+# Python Data Science Template
 
 **Note**: _This repo was forked from https://github.com/khuyentran1401/data-science-template_
 
 ## What is this?
-This repository is a template for data science projects.
+This repository is designed for data scientists who want to create new, 
+**reproducable** Python projects with powerful tools out of-the-box, in as 
+little as three commands.
 
-It allows anybody to quickly and easily create a **reproducible** Python data science
-project, already set up with the following tools:
+Once the user has followed the installation instructions below, they will 
+have a new data science project with the following tools already installed:
+
+* [Python](https://docs.python.org/3/): The most popular programming language 
+for data science. 
 
 * [Jupyter Notebook](https://docs.jupyter.org/en/latest/): Web application for
 creating and sharing computational documents.
-* [Ipykernel](https://ipython.readthedocs.io/en/stable/index.html): The Python
-execution backend for Jupyter. It is required as the kernel will be used within
-a virtual environment.
-* [Pandas](https://pandas.pydata.org/docs/): A fast, powerful, flexible and easy to use open source data
-analysis and manipulation tool.
 
-## What makes the projects reproducable?
+* [DVC](https://dvc.org/doc): Helps data science and machine learning teams 
+manage large datasets, make projects reproducible, and collaborate better.
 
-Anyone may simply follow the installation instructions in the project README to reproduce it.
+* [Pandas](https://pandas.pydata.org/docs/): A fast, powerful, flexible and easy
+to use open source data analysis and manipulation tool.
 
-## Requirements
-* [Cookiecutter](https://cookiecutter.readthedocs.io/en/stable/): A command-line
-utility that creates projects from cookiecutters (project templates).
-* [Poetry](https://python-poetry.org/docs/): A tool for dependency management
-and packaging in Python - [article](https://towardsdatascience.com/how-to-effortlessly-publish-your-python-package-to-pypi-using-poetry-44b305362f9f).
+## How is the data science project reproducable?
 
+Every project created with this template:
 
-## Project Structure
+* is designed for its dependencies to be managed by 
+[Poetry](https://python-poetry.org/docs/).
+* contains a README, which includes clear installation instructions for
+anybody who wants to reproduce it.
+
+## What does the project structure look like? 
 ```bash
 .
 ├── .gitignore                      # ignore files that cannot commit to Git
 ├── Makefile                        # store useful commands to set up the environment
-├── notebooks                       # store notebooks
+├── data                            # store jupyter notebooks
+│   ├── processed                   # data after processing
+│   └── raw                         # raw data
+├── notebooks                       # store jupyter notebooks
 ├── pyproject.toml                  # dependencies for poetry
 ├── README.md                       # describe your project
 └── src                             # store source code
     └── __init__.py                 # make src a Python module 
 ```
 
-## How To Use This Project
+## Requirements
+* [Cookiecutter](https://cookiecutter.readthedocs.io/en/stable/): A command-line
+utility that creates projects from cookiecutters (project templates).
+* [Poetry](https://python-poetry.org/docs/): A dependency management
+and packaging tool for Python - [article](https://towardsdatascience.com/how-to-effortlessly-publish-your-python-package-to-pypi-using-poetry-44b305362f9f).
+
+## How do I create a new project with this template?
 
 Install Cookiecutter:
 ```bash
@@ -51,22 +64,22 @@ Install Poetry:
 $ curl -sSL https://install.python-poetry.org | python3 -
 ```
 
-Create a new project based on this repo:
+Create a new project based on this repo using Cookiecutter:
 ```bash
 $ cookiecutter https://github.com/cdfrdmn/data-science-template
 ```
 You’ll be prompted to answer certain details about the project:
 
-- Name of the project
-- Author of the project
-- The Python version constraint for your project - see [Caret requirements](https://python-poetry.org/docs/1.1/dependency-specification/).
+- Name of the project.
+- Author of the project.
+- The Python version constraint for your project (see [dependency specification](https://python-poetry.org/docs/1.1/dependency-specification/)).
 
-**Note**: _By default, Poetry will try to use the Python version used during
+_**Note**: By default, Poetry will try to use the Python version used during
 Poetry’s installation to create the virtual environment. If this Python
 version is not compatible with the Python requirement of the project, see the Poetry documentation's section [Managing Environments](https://python-poetry.org/docs/managing-environments/)._
 
 
-### Set Up the Environment
+### Finally, set up the environment
 
 Activate the virtual environment, and open a sub-shell within it:
 ```bash
@@ -83,14 +96,17 @@ This will do the following:
 `pyproject.toml`.
 
 Congratulations! You have just created a reproducible data science project with
-useful tools.
+data science tools already installed.
 
-### Install New Packages
+### How can I add more packages to this template?
 
-If you want, you can install more PyPI packages with:
+If you want, you can install more PyPI packages to this template with:
 ```bash
 $ poetry add <package-name>
 ```
+
+This will add your desired packages to the system build requirements file 
+`pyproject.toml`.
 
 ## How to Share your Project
 
