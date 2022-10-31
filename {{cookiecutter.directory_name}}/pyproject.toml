@@ -6,7 +6,6 @@ authors = ["{{cookiecutter.author_name}}"]
 
 [tool.poetry.dependencies]
 python = "{{cookiecutter.compatible_python_versions}}"
-ipykernel = "^6.16.2"
 jupyter = "^1.0.0"
 pandas = "^1.5.1"
 dvc = "^2.31.0"
